@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <thymeleaf th:replace="fragments/head :: head('Website')"/>
+    <script th:attr="src=@{/js/partials/sala_imprensa_eventos.js}"></script>
+    <script th:attr="src=@{/js/partials/sala_imprensa_contatos.js}"></script>
+    <script th:attr="src=@{/js/partials/sala_imprensa_contatos_vlt.js}"></script>
+    <script th:attr="src=@{/js/website.js}"></script>
+</head>
+<body ng-app="app" ng-controller="controller">
+
+<div class="page-container">
+
+    <div style="z-index:3; position:relative;">
+        <div th:replace="fragments/menu :: menu"></div>
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <span style="font-size:20px; color:#FFFFFF; margin-left: 8px; line-height: 60px;">&#9776; PÃ¡ginas do Site</span>
+        <a href="#!home">Página Inicial</a>
+        <a data-toggle="collapse" data-target="#sobreVLT" style="cursor: pointer;">Sobre o VLT</a>
+        <div id="sobreVLT" class="collapse subsidenav">
+            <a href="#!sobre_o_vlt">Sobre o VLT</a>
+            <a href="#!historia">História</a>
+            <a href="#!institucional">Institucional</a>
+            <a href="#!perguntas_frequentes">Perguntas Frequentes</a>
+            <a href="#!galeria">Galeria de Fotos</a>
+            <a href="#!transparencia">Transparência</a>
+            <a href="#!responsabilidade_social">Responsabilidade Social</a>
+        </div>
+        <a data-toggle="collapse" data-target="#nossaRede" style="cursor: pointer;">Nossa Rede</a>
+        <div id="nossaRede" class="collapse subsidenav">
+            <a href="#!nossa_rede">Nossa Rede</a>
+            <a href="#!conexoes">Conexões</a>
+            <a href="#!mapa_rede">Mapa da Rede</a>
+            <a href="#!mapa_turistico">Mapa Turístico</a>
+        </div>
+        <a href="#!noticias">Notícias</a>
+        <a href="#!manual_usuario">Manual do Usuário</a>
+        <a href="#!sala_imprensa">Sala de Imprensa</a>
+
+        <!--<a data-toggle="collapse" data-target="#sala_imprensa" style="cursor: pointer;">Sala de Imprensa</a>-->
+
+        <a data-toggle="collapse" data-target="#faleConosco" style="cursor: pointer;">Fale Conosco</a>
+        <div id="faleConosco" class="collapse subsidenav">
+            <a href="#!fale_conosco">Fale Conosco</a>
+            <a href="#!achados_perdidos">Achados e Perdidos</a>
+            <a href="#!canal_confidencial">Canal Confidencial</a>
+            <a href="#!ouvidoria">Ouvidoria</a>
+            <a href="#!trabalhe_aqui">Trabalhe Conosco</a>
+        </div>
+        <a href="#!aplicativos">Aplicativos</a>
+        <a href="#!chegadas_partidas">Chegadas e Partidas</a>
+    </div>
+
+    <div id="main">
+        <div ng-view=""></div>
+    </div>
+</div>
+</body>
+</html>

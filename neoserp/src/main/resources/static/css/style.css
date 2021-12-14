@@ -1,0 +1,137 @@
+body {
+   margin: 0 auto;
+   padding-right: 0px !important;
+    max-width: 1280px;
+}
+
+body.modal-open {
+    overflow: auto !important;
+}
+
+.vlt-navbar {
+    background-color: #005dac;
+}
+
+.dropdown-menu {
+    background-color: #005dac;
+}
+
+h1 {
+    color: #005dac;
+}
+
+tr {
+    color: #678dab;
+}
+
+th {
+    color: #005dac;
+}
+
+#nav a {
+    color: #ffffff;
+    line-height: 32px;
+}
+
+#nav a:hover {
+    background-color: #154467;
+}
+
+.search-icon {
+    background:url('../images/lupa.svg') right center no-repeat;
+}
+
+.right-side-search-input {
+    margin-top: 25px;
+}
+
+.config-label {
+    color: #005dac;
+}
+
+.config-text {
+    color: #678dab;
+}
+
+.modal {
+    overflow-y:auto;
+}
+
+#login-box {
+    width: 300px;
+    padding: 20px;
+    margin: 100px auto;
+    background: #fff;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: 1px solid #0183B3;
+}
+
+#login-box {
+    border-radius: 8px !important;
+    -moz-border-radius: 8px !important;
+    -webkit-border-radius: 8px !important;
+}
+#login-box h3 {
+    display: none !important;
+}
+
+.validation-error-message {
+    color: #a94442;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    z-index: 2;
+    top: 0;
+
+    background-color: #004B89;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 70px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #ffffff;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    background-color: #154467;
+}
+
+.sidenav .subsidenav a {
+    padding: 8px 8px 8px 50px;
+    text-decoration: none;
+    font-size: 14px;
+    color: #ffffff;
+    background-color: #003A6A;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover {
+    background-color: #154467;
+}
+
+#main {
+    transition: margin-left .5s;
+    padding: 16px;
+    margin-left: 250px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+.has-error .tinyeditor {
+    border-color: #a94442;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}

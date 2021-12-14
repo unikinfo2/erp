@@ -1,0 +1,31 @@
+<head th:fragment="head(title)" th:remove="tag">
+	<title th:text="'NeosERP - ' +${title}"></title>
+	<meta http-equiv="Content-Type" data="text/html; charset=UTF-8" />
+	<meta name="viewport" data="width=device-width, initial-scale=1" />
+
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+	<!-- -->
+	<link rel="stylesheet" th:href="@{/css/ng-notify.min.css}" />
+	<link rel="stylesheet" th:href="@{/css/style.css}" />
+
+	<link rel="stylesheet" th:href="@{/css/wysiwyg.editor.min.css}" />
+	<link rel="stylesheet" th:href="@{/css/font-awesome.css}" />
+
+	<script
+			th:if="${!#httpServletRequest.getHeader('User-Agent').contains('Chrome') &amp;&amp; !#httpServletRequest.getHeader('User-Agent').contains('Firefox')}"
+			th:attr="src=@{/js/lib/bluebird.min.js}"></script>
+	<script th:attr="src=@{/js/lib/jquery-1.12.4.min.js}"></script>
+	<script th:attr="src=@{/js/lib/bootstrap.min.js}"></script>
+	<script th:attr="src=@{/js/lib/angular.min.js}"></script>
+	<script th:attr="src=@{/js/lib/angular-route.min.js}"></script>
+	<script th:attr="src=@{/js/lib/angular-sanitize.min.js}"></script>
+	<script th:attr="src=@{/js/lib/ng-notify.min.js}"></script>
+	<script th:attr="src=@{/js/lib/angular.paging.min.js}"></script>
+	<script th:attr="src=@{/js/lib/ng-file-upload-shim.min.js}"></script>
+	<script th:attr="src=@{/js/lib/ng-file-upload.min.js}"></script>
+	<script th:attr="src=@{/js/lib/wysiwyg.min.js}"></script>
+
+	<script th:inline="javascript"> var contextRoot = [[@{/}]]; </script>
+	<script th:attr="src=@{/js/_core.js}"></script>
+
+</head>

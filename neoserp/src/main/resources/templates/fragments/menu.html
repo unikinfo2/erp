@@ -1,0 +1,113 @@
+<div th:fragment="menu">
+    <nav class="vlt-navbar" id="nav">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" th:href="@{/}"><img th:attr="src=@{/images/imgPerfil/1p_logo_uni_k.jpg}" width="55"/></a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li th:classappend="${#httpServletRequest.requestURI.equals('/')} ? active : none">
+                        <a th:href="@{/}"> Inicio <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li th:classappend="${#httpServletRequest.requestURI.equals('/painel')} ? active : none"
+                        sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_OPERACAO')">
+                        <a th:href="@{/painel}"> Painel de Operações<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li th:classappend="${#httpServletRequest.requestURI.startsWith('/informacoes')} ? active : none"
+                        sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                        <a th:href="@{/informacoes-vlt}">Informações do VLT</a>
+                    </li>
+                    <li th:classappend="${#httpServletRequest.requestURI.startsWith('/perguntas')} ? active : none"
+                        sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                        <a th:href="@{/perguntas-frequentes}">FAQ</a>
+                    </li>
+                    <li th:classappend="${#httpServletRequest.requestURI.startsWith('/noticias')} ? active : none"
+                        sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                        <a th:href="@{/noticias}">Notícias</a>
+                    </li>
+                    <li th:classappend="${#httpServletRequest.requestURI.startsWith('/website')} ? active : none"
+                        sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                        <a th:href="@{/website}">Website</a>
+                    </li>
+                    <li th:classappend="${#httpServletRequest.requestURI.startsWith('/grupos-de-pmvs')} ? active : none"
+                        sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                        <a th:href="@{/grupos-de-pmvs}">Grupos de PMVs</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav">
+                    <li class="dropdown" sec:authorize="hasAnyRole('ROLE_ADMIN')">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" rolePor="button" aria-haspopup="true"
+                           aria-expanded="false">Mapas da Rede<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/linhas')} ? active : none"
+                                sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/linhas}">Linhas</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/trens')} ? active : none"
+                                sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/trens}">Trens</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/trechos')} ? active : none"
+                                sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/trechos}">Trechos</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/estacoes')} ? active : none"
+                                sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/estacoes}">Estações</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/atracoes')} ? active : none"
+                                sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                                <a th:href="@{/atracoes-turisticas}">Atrações Turísticas</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown" sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" rolePor="button" aria-haspopup="true"
+                           aria-expanded="false">Administração <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/configuracoes-gerais')} ? active : none"
+                                sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/configuracoes-gerais}">Configurações</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/configuracoes-email')} ? active : none"
+                                sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                                <a th:href="@{/configuracoes-email}">Configurações de E-mails</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/configuracoes-pmvs')} ? active : none"
+                                sec:authorize="hasAnyRole('ROLE_ADMIN', 'ROLE_COMUNICACAO')">
+                                <a th:href="@{/configuracoes-pmvs}">Configurações dos PMVs</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/configuracoes-integracao-sao')} ? active : none"
+                                sec:authorize="hasAnyRole('ROLE_ADMIN')">
+                                <a th:href="@{/configuracoes-integracao-sao}">Configurações de Integração com o SAO</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/auditoria')} ? active : none"
+                                sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/auditoria}">Log de Auditoria</a>
+                            </li>
+                            <li th:classappend="${#httpServletRequest.requestURI.startsWith('/manutencao')} ? active : none"
+                                sec:authorize="hasRole('ROLE_ADMIN')">
+                                <a th:href="@{/manutencao}">Manutenção</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a th:href="@{/logout}"> Sair <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
